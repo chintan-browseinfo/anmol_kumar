@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+            <record id="view_sport_module_tree" model="ir.ui.view">
+                <field name="name">sport.module.tree</field>
+                <field name="model">sport.module</field>
+                <field name="priority">5</field>
+                <field name="arch" type="xml">
+                        <tree string="sport">
+                            <field name="name"/>
+                            <field name="length"/>
+                            <field name="weight"/>
+                            <field name="brandname"/>
+                        </tree>
+                </field>
+            </record>
+            <record id="action_sport" model="ir.actions.act_window">
+            <field name="name">Sport</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sport.module</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                </p><p>
+                </p>
+            </field>
+            </record>
+            <menuitem id="main_menu" name="sport" sequence="3"/>
+            <menuitem id="sub_menu" name="sport" sequence="4" parent="main_menu"/>
+        
+            <menuitem action="action_sport"
+            id="menu_sport_module" parent="sub_menu"
+            name="sport"
+            sequence="13" />
+
+    </data>
+</odoo>

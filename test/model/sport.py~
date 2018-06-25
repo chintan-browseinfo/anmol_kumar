@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+from odoo import models, api, fields, _
+
+
+class SportModule(models.Model):
+    _name="sport.module"
+    _description="Sport Info"
+    
+    name = fields.Char(string="Name")
+    length=fields.Integer(string="length of equipment")
+    weight=fields.Integer(string="weight of equipment")
+    brandname=fields.Selection([('n','nike'), ('a','addidas'),('r','reebok'),('e','espn'),('s','Sky Sports')],required=True,note = fields.Text(string='Description'))
+    
